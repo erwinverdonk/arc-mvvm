@@ -1,0 +1,33 @@
+{
+	"name": "arc-mvvm",
+	"description": "description",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/erwinverdonk/arc-mvvm.git"
+	},
+	"license": "MIT",
+	"author": {
+		"name": "Erwin Verdonk",
+		"email": "e.verdonk@gmail.com",
+		"url": "http://www.erwinverdonk.com"
+	},
+
+	"devDependencies": {
+		"mkdirp": "latest",
+		"eslint": "latest",
+		"uglify-js": "latest",
+		"ng-annotate": "latest"
+	},
+
+	"scripts": {
+		"build": "npm run lint && npm run build:js",
+		"build:js": "npm run annotate && npm run uglify",
+
+		"mkDirDist": "mkdirp ./dist",
+		"lint": "eslint ./src/**.js",
+		"annotate": "ng-annotate -a ./src/**.js -o ./dist/arc.js",
+		"uglify": "uglifyjs ./dist/arc.js -c -m -o ./dist/arc.min.js",
+
+		"prebuild": "npm run mkDirDist"
+	}
+}
