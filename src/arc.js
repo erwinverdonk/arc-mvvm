@@ -10,7 +10,7 @@
 		angular.extend(moduleInstance, {
 			component: component,
 			decorator: decorator,
-			model: model,
+			model: model
 		});
 
 		return moduleInstance;
@@ -104,11 +104,12 @@
 		}
 
 		function model(name, _model){
-		  	// Wrap a function around the controller to bind to the correct scope and
+			// Wrap a function around the controller to bind to the correct scope and
 			// to incorporate the controller into the scope.
-		  	moduleInstance.controller(name, function($scope, $injector){
+
+			moduleInstance.controller(name, /*@ngInject*/ function($scope, $injector){
 				$injector.invoke(_model, $scope);
-		  	});
+			});
 
 			return moduleInstance;
 		}
