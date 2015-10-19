@@ -1,6 +1,6 @@
 {
   "name": "arc-mvvm",
-  "description": "description",
+  "description": "Arc is an extension for AngularJS to provide easy tools to make use of the MVVM (Model View ViewModel) design pattern.",
   "repository": {
     "type": "git",
     "url": "https://github.com/erwinverdonk/arc-mvvm.git"
