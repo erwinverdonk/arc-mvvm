@@ -26,5 +26,5 @@
     "uglify": "uglifyjs ./dist/arc.js -c -m -o ./dist/arc.min.js",
     "prebuild": "npm run mkDirDist"
   },
-  "version": "1.0.1-0"
+  "version": "1.0.0-0"
 }
