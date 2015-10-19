@@ -1,0 +1,21 @@
+{
+  "name": "arc-mvvm",
+  "version": "1.0.0",
+  "homepage": "https://github.com/erwinverdonk/arc-mvvm",
+  "authors": [
+    "Erwin Verdonk <erv@woodwing.com>"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/erwinverdonk/arc-mvvm"
+  },
+  "main": "./dist/arc.min.js",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
