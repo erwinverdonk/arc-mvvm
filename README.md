@@ -1,4 +1,4 @@
-# arc-mvvm
+# arc-mvvm (alpha stage)
 A MVVM (Model View ViewModel) workflow approach for AngularJS to guide developers into creating robust and reusable Web Components and free them from the ng-controller and $scope pitfalls. 
 
 ## Usage
