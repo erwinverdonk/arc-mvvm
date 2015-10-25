@@ -6,28 +6,28 @@ A MVVM (Model View ViewModel) workflow approach for AngularJS to guide developer
 Create a web component
 ```js
 (function () {
-  'use strict';
+	'use strict';
 
-  angular.module('myModule')
-    .component('myComponent', {
-      model: 'MyComponentModel',
-      view: 'components/my-component/my-component.html',
-      viewModel: viewModel,
-      bindToModel: {
-        data: '=?'
-      }
-    }
-  );
+	angular.module('myModule')
+		.component('myComponent', {
+			model: 'MyComponentModel',
+			view: 'components/my-component/my-component.html',
+			viewModel: viewModel,
+			bindToModel: {
+				data: '=?'
+			}
+		}
+	);
 
-   /**
-     * View Model
-     * @param {Object} element The DOM element linked to this component.
-     * @param {Object} attrs The attributes set on the DOM element.
-     * @param {Object} model The model of the component.
-     */
-  function viewModel(element, attrs, model) {
-    // Presentation Logic (event handlers, dom manipulation, etc)
-  }
+	/**
+	 * View Model
+	 * @param {Object} element The DOM element linked to this component.
+	 * @param {Object} attrs The attributes set on the DOM element.
+	 * @param {Object} model The model of the component.
+	 */
+	function viewModel(element, attrs, model) {
+		// Presentation Logic (event handlers, dom manipulation, etc)
+	}
 })();
 ```
 
@@ -40,7 +40,7 @@ Create a model
     .model('MyComponentModel', MyComponentModel);
 
 	// The model should not contain any presentation logic.
-	// You should see the model as an API that can be used without a user interface.
+	// You should see the model as an API that can be used without an user interface.
 	function MyComponentModel() {
 		// Determine what is public to the view.
 		angular.extend(this, {
@@ -64,26 +64,27 @@ Create a model
 Create a decorator
 ```js
 (function () {
-  'use strict';
+	'use strict';
 
-  angular.module('myModule')
-    .decorator('myDecorator', {
-      priority: -1, // For decorators the priority should always be lower than the priority of the component.
-      viewModel: viewModel,
-      model: 'MyDecoratorModel'
-    }
-  );
+	angular.module('myModule')
+		.decorator('myDecorator', {
+			// For decorators the priority should always be lower than the priority of the component.
+			priority: -1, 
+			viewModel: viewModel,
+			model: 'MyDecoratorModel'
+		}
+	);
 
-  /**
-     * View Model
-     * @param {Object} element The DOM element linked to this decorator.
-     * @param {Object} attrs The attributes set on the DOM element.
-     * @param {Object} model The model of the decorator.
-     * @param {Object} hostModel The model of the host component.
-     */
-  function viewModel(element, attrs, model, hostModel) {
-    // Presentation Logic (event handlers, dom manipulation, etc)
-  }
+	/**
+	 * View Model
+	 * @param {Object} element The DOM element linked to this decorator.
+	 * @param {Object} attrs The attributes set on the DOM element.
+	 * @param {Object} model The model of the decorator.
+	 * @param {Object} hostModel The model of the host component.
+	 */
+	function viewModel(element, attrs, model, hostModel) {
+		// Presentation Logic (event handlers, dom manipulation, etc)
+	}
 })();
 ```
 
