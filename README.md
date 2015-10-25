@@ -1,5 +1,5 @@
 # arc-mvvm
-A MVVM (Model View ViewModel) workflow approach for AngularJS to guide developers into creating robust and reusable Web Components and free them from the ng-controller and $scope pitfall. 
+A MVVM (Model View ViewModel) workflow approach for AngularJS to guide developers into creating robust and reusable Web Components and free them from the ng-controller and $scope pitfalls. 
 
 ## Usage
 
@@ -39,22 +39,24 @@ Create a model
   angular.module('myModule')
     .model('MyComponentModel', MyComponentModel);
 
+	// The model should not contain any presentation logic.
+	// You should see the model as an API that can be used without a user interface.
 	function MyComponentModel() {
-	  // Determine what is public to the view.
-	  angular.extend(this, {
-      data: data;
-      performSomeAction: performSomeAction
-    })
+		// Determine what is public to the view.
+		angular.extend(this, {
+			data: data,
+			performSomeAction: performSomeAction
+		});
     
-    var data: [];
+		var data: [];
     
-    function performSomeAction(){
-      // ...
-    }
+		function performSomeAction(){
+			// ...
+		}
     
-    function _validateContext(){
-      // ...
-    }
+		function _validateContext(){
+			// ...
+		}
 	}
 })();
 ```
@@ -66,7 +68,7 @@ Create a decorator
 
   angular.module('myModule')
     .decorator('myDecorator', {
-      priority: -1, 
+      priority: -1, // For decorators the priority should always be lower than the priority of the component.
       viewModel: viewModel,
       model: 'MyDecoratorModel'
     }
